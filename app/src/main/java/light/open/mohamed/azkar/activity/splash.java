@@ -2,7 +2,7 @@ package light.open.mohamed.azkar.activity;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import light.open.mohamed.azkar.R;
@@ -16,7 +16,7 @@ public class splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-               startActivity(new Intent(splash.this,MainActivity.class));
+               startActivity(new Intent(splash.this,HomeActivity.class));
             }
         },2500);
 

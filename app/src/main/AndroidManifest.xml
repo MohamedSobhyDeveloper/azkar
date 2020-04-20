@@ -9,9 +9,10 @@
         android:roundIcon="@drawable/ico"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-
-        </activity>
+        <activity android:name=".activity.Azkar_Activity"></activity>
+        <activity android:name=".activity.Ward_Activity" />
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
