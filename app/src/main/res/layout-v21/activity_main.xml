@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="light.open.mohamed.azkar.activity.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:id="@+id/appbar"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:background="@color/Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+            <RelativeLayout
+                android:id="@+id/ticket_popup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/black_rect"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/parking_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="أحسنت"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/tnumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="لقد قمت بالتسبيح"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/roundedbuttonblue"
+                            android:text="اغلاق"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/ticket_popup1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/mm"
+                    android:orientation="vertical">
+
+                    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/adView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        ads:adSize="SMART_BANNER"
+                        ads:adUnitId="ca-app-pub-7819330902615175/2629002117"></com.google.android.gms.ads.AdView>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        >
+
+                        <EditText
+                            android:id="@+id/countedittext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="@drawable/white_rect"
+                            android:enabled="false"
+                            android:hint="0"
+                            android:imeOptions="actionDone"
+                            android:padding="20dp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"
+                            android:textCursorDrawable="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="150dp"
+                        android:padding="5dp">
+
+                        <Button
+                            android:id="@+id/choose"
+                            android:layout_width="60dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_rect"
+                            android:text="اختر"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editText"
+                            android:layout_width="290dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_rect"
+                            android:enabled="false"
+                            android:layout_marginLeft="5dp"
+                            android:hint="اختر الذكر من القائمة"
+                            android:imeOptions="actionDone"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"
+                            android:textCursorDrawable="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center_horizontal"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="25dp">
+
+                        <Button
+                            android:id="@+id/cancel"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/roundedbuttonblue"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:id="@+id/start"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/roundedbuttonblue"
+                            android:text="تسبيح"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

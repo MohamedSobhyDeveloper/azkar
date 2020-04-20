@@ -5,8 +5,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +19,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+
+import java.util.Objects;
 
 import light.open.mohamed.azkar.MySharedPref;
 import light.open.mohamed.azkar.R;
@@ -35,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        setSupportActionBar(toolbar);
         b1=(Button)findViewById(R.id.cancel);
         b2=(Button)findViewById(R.id.start);
         b3=(Button)findViewById(R.id.close);
@@ -51,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
         e1.setText(MySharedPref.getData(MainActivity.this, "azkar", null));
         e2.setText(MySharedPref.getData(MainActivity.this, "count", null));
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
         if (e2.getText().toString().equals("")){
             e2.setText("0");
         }
@@ -209,11 +219,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-        finish();
-        System.exit(0);
+       Intent intent=new Intent(MainActivity.this,HomeActivity.class);
+       startActivity(intent);
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+
+        Intent intent=new Intent(MainActivity.this,HomeActivity.class);
+        startActivity(intent);
+
+        overridePendingTransition(R.layout.enter, R.layout.exit);
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }

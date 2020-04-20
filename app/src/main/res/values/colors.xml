@@ -19,4 +19,6 @@
     <color name="defaultContentColor">@android:color/black</color>
     <color name="defaultBorderFlagColor">@android:color/transparent</color>
     <color name="pressed_bg">#64b7b7b7</color>
+    <color name="Brown">#8D4436</color>
+
 </resources>
